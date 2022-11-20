@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "nbdev-ignore"
+  site-url: "https://feynlee.github.io/nbdev-ignore"
+  description: "add an ignore directive to hide the cell and avoid execution during testing and docs generation in Jupyter notebooks when using nbdev for development."
+  repo-branch: main
+  repo-url: "https://github.com/feynlee/nbdev-ignore"
