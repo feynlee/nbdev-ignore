@@ -6,15 +6,16 @@ Nbdev-ignore
 ## Install
 
 ``` sh
-pip install nbdev-ignore
+pip install nbdev_ignore
 ```
 
 # How it works
 
-There’s only one function `ignore_` in this module. It’s exactly the
-same as the [hide\_]() processor in `nbdev`, so that “\#\| ignore”
-serves the same purpose as “\#\| hide”. For details on how it works, see
-[]().
+There’s only one function
+[`ignore_`](https://feynlee.github.io/nbdev-ignore/core.html#ignore_) in
+this module. It’s exactly the same as the [hide\_]() processor in
+`nbdev`, so that “\#\| ignore” serves the same purpose as “\#\| hide”.
+For details on how it works, see []().
 
 In order for it to also serve as a test flag, we will need to manually
 add it to `tst_flags` (see below), as currently there’s no way to plug
