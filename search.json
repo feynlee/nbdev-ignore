@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "def ignore_(cell):\n    \"Ignore cell from output\"\n    del(cell['source'])\n\n\nsource\n\nignore_\n\n ignore_ (cell)\n\nIgnore cell from output\nThis follows the hide processor implementation in nbdev. When a function is given as a processor, if its name ends with _, its name will be used to match the directive for that action (this is implemented in NBProcessor), so we can name our function ignore_ in order for it to match our directive “#| ignore”.\nIn order for this processor to be loaded, we need to add it to procs in settings.ini, which is loaded by FilterDefaults.\nAll cells with this directive will then be removed when generating docs."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Nbdev-ignore",
+    "section": "",
+    "text": "When using the nbdev library, I often find myself having to write\n#| hide\n#| eval: false\n...\nin order for that cell in Jupyter Notebook to be ignored by both the tests and docs. It would great to have a simple directive to do this, and this is the ignore directive:\n#| ignore\n...\nIt’s equivalent to the above directives."
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "Nbdev-ignore",
+    "section": "Installation",
+    "text": "Installation\npip install nbdev_ignore"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "Nbdev-ignore",
+    "section": "How to use",
+    "text": "How to use\nTo enable the #| ignore directive, in your settings.ini make sure to:\n\nAdd nbdev_ignore as a requirement\nAdd procs = nbdev_igore.core:ignore_, where it should point to the exact function being called\nAdd it to test flags: tst_flags = ignore, so that cells with this directive also avoids testing. If you already have other test flags, separate them with space. For example, if you already have notest as your test flag, then tst_flags = notest ignore."
+  },
+  {
+    "objectID": "index.html#how-it-works",
+    "href": "index.html#how-it-works",
+    "title": "Nbdev-ignore",
+    "section": "How it works",
+    "text": "How it works\nThere’s only one function ignore_ in this module. It’s exactly the same as the hide_ processor in nbdev, so that “#| ignore” serves the same purpose as “#| hide”. For details on how it works, see here.\nIn order for it to also serve as a test flag, we will need to manually add it to tst_flags (see below) so tests will ignore cells with this directive. Currently there’s no simple way to hack the nbdev_test process, so this has to be done manually."
+  }
+]
